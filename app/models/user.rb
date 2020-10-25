@@ -10,4 +10,6 @@ class User < ApplicationRecord
   
     # Will return an array of opinions the given user instance has made
     has_many :tastes, dependent: :destroy
+
+    validates :followed, uniqueness: { scope: :follower }
 end
